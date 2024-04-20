@@ -4,26 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code - Image Gallery</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
-        /* Additional styles specific to code display */
         body {
             font-family: Arial, sans-serif;
             padding: 20px;
             position: relative; /* Position relative for absolute positioning */
+            min-height: 100vh; /* Ensure full viewport height */
+            background-color: #f5f5f5;
         }
         pre {
-            background-color: #f5f5f5;
+            background-color: #ffffff;
             padding: 20px;
             border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow-x: auto;
+            max-width: 100%;
         }
-        /* Style for cat image at bottom right */
         #catImage {
             position: absolute;
             bottom: 20px;
             right: 20px;
-            width: 200px; /* Adjust size as needed */
+            width: 400px;
+            height: 400px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -118,7 +120,7 @@
         </code>
     </pre>
 
-    <!-- Cat image at bottom right corner -->
-    <img id="catImage" src="https://i.pinimg.com/736x/0d/d8/51/0dd851614629e073616aab74cb0a68b1.jpg" alt="My Cat">
+    <!-- Cat image (400x400) at bottom right corner -->
+    <img id="catImage" src="https://epic-gamer-cats.neocities.org/bingus.jpg" alt="My Cat">
 </body>
 </html>
