@@ -10,12 +10,22 @@
         body {
             font-family: Arial, sans-serif;
             padding: 20px;
+            position: relative; /* Position relative for absolute positioning */
         }
         pre {
             background-color: #f5f5f5;
             padding: 20px;
             border-radius: 8px;
             overflow-x: auto;
+        }
+        /* Style for cat image at bottom right */
+        #catImage {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 200px; /* Adjust size as needed */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -39,6 +49,7 @@
                     &lt;div class="images-container" id="imagesContainer"&gt;
                         &lt;!-- Images will be dynamically added here --&gt;
                     &lt;/div&gt;
+                    &lt;p&gt;View the code &lt;a href="code.html" target="_blank"&gt;here&lt;/a&gt;.&lt;/p&gt;
                 &lt;/div&gt;
 
                 &lt;script src="script.js"&gt;&lt;/script&gt;
@@ -107,5 +118,9 @@
         </code>
     </pre>
 
+    <!-- Cat image at bottom right corner -->
+    <img id="catImage" src="https://steamuserimages-a.akamaihd.net/ugc/1736673867958718748/F96A760AD45AFD9EA3000F1807EF4829816B1430/" alt="My Cat">
+</body>
+</html>
 </body>
 </html>
