@@ -35,13 +35,13 @@ body {
     background-color: #f0f0f0;
 }
 
-.status {
+#status {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-.reset-button {
+#resetButton {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -51,6 +51,6 @@ body {
     border-radius: 5px;
 }
 
-.reset-button:hover {
+#resetButton:hover {
     background-color: #0056b3;
 }
