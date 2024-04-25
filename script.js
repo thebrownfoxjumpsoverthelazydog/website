@@ -1,11 +1,11 @@
-document.addEventListener('DOMContentLoaded', function() {
+ocument.addEventListener('DOMContentLoaded', function() {
     const imagesContainer = document.getElementById('imagesContainer');
 
     // Array of image URLs (replace these with your own image URLs)
     const imageUrls = [
-        'https://example.com/image1.jpg',
-        'https://example.com/image2.jpg',
-        'https://example.com/image3.jpg'
+        'https://www.nrgpark.com/wp-content/uploads/HCC_1920_1080.jpg',
+        'https://clipground.com/images/u-of-h-logo-3.png',
+        'https://pm1.narvii.com/6298/9624c39ba4925b63480ca937ffacf2b36785d425_hq.jpg'
         // Add more image URLs as needed
     ];
 
@@ -21,4 +21,3 @@ document.addEventListener('DOMContentLoaded', function() {
     // Call renderImages function when DOM content is loaded
     renderImages();
 });
-How to Use:
