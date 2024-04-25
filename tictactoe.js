@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const cells = document.querySelectorAll('.cell');
     const status = document.getElementById('status');
     const resetButton = document.getElementById('resetButton');
-    const resultImage = document.getElementById('resultImage');
 
     let currentPlayer = 'X';
     let gameBoard = ['', '', '', '', '', '', '', '', ''];
@@ -19,11 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (checkWinner(currentPlayer)) {
                 status.textContent = `Player ${currentPlayer} wins!`;
                 gameEnded = true;
-                resultImage.src = 'https://webstockreview.net/images/smiley-clipart-thumbs-up-1.png'; // Set win image
             } else if (isBoardFull()) {
                 status.textContent = "It's a tie!";
                 gameEnded = true;
-                resultImage.src = 'https://www.ties.com/primg/black-silk-the-essential-black-tie-219802-540-1280-0.jpg'; // Set tie image
             } else {
                 currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
                 status.textContent = `Player ${currentPlayer}'s turn`;
@@ -39,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
             cell.textContent = ''; // Clear cell content
         });
         status.textContent = `Player ${currentPlayer}'s turn`;
-        resultImage.src = ''; // Clear result image
     });
 
     function checkWinner(player) {
