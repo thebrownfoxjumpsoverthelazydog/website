@@ -3,9 +3,9 @@ ocument.addEventListener('DOMContentLoaded', function() {
 
     // Array of image URLs (replace these with your own image URLs)
     const imageUrls = [
-        'https://www.nrgpark.com/wp-content/uploads/HCC_1920_1080.jpg',
+        'https://mysterynursetutors.com/wp-content/uploads/2022/01/hcc.png',
         'https://clipground.com/images/u-of-h-logo-3.png',
-        'https://pm1.narvii.com/6298/9624c39ba4925b63480ca937ffacf2b36785d425_hq.jpg'
+        'https://amm-prod.s3-us-west-2.amazonaws.com/about/charitable-activities/project-cure.png'
         // Add more image URLs as needed
     ];
 
