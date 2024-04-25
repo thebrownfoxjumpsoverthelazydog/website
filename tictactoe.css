@@ -54,9 +54,3 @@ body {
 #resetButton:hover {
     background-color: #0056b3;
 }
-
-/* Ensure content stays within cells */
-.board,
-.cell {
-    box-sizing: border-box;
-}
