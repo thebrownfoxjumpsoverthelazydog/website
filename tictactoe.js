@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
     for (let i = 0; i < 9; i++) {
         const cell = document.createElement('div');
         cell.classList.add('cell');
-        cell.dataset.index = i;
         cell.addEventListener('click', () => handleCellClick(i));
         board.appendChild(cell);
     }
@@ -72,3 +71,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial status
     status.textContent = `Player ${currentPlayer}'s turn`;
 });
+
+
+
+
+
