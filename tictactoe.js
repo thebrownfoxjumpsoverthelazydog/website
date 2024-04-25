@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const board = document.getElementById('board');
     const cells = document.querySelectorAll('.cell');
     const status = document.getElementById('status');
     const resetButton = document.getElementById('resetButton');
