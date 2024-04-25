@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const board = document.getElementById('board');
+    const cells = document.querySelectorAll('.cell');
     const status = document.getElementById('status');
     const resetButton = document.getElementById('resetButton');
 
@@ -7,41 +8,37 @@ document.addEventListener('DOMContentLoaded', function() {
     let gameBoard = ['', '', '', '', '', '', '', '', ''];
     let gameEnded = false;
 
-    // Create game board cells
-    for (let i = 0; i < 9; i++) {
-        const cell = document.createElement('div');
-        cell.classList.add('cell');
-        cell.addEventListener('click', () => handleCellClick(i));
-        board.appendChild(cell);
-    }
+    cells.forEach(cell => {
+        cell.addEventListener('click', () => {
+            if (gameEnded || cell.textContent !== '') return;
 
-    // Handle cell click
-    function handleCellClick(index) {
-        if (gameEnded || gameBoard[index] !== '') return;
+            const index = parseInt(cell.dataset.index);
+            gameBoard[index] = currentPlayer;
+            cell.textContent = currentPlayer;
 
-        gameBoard[index] = currentPlayer;
-        renderBoard();
-
-        if (checkWinner(currentPlayer)) {
-            status.textContent = `Player ${currentPlayer} wins!`;
-            gameEnded = true;
-        } else if (isBoardFull()) {
-            status.textContent = "It's a tie!";
-            gameEnded = true;
-        } else {
-            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-            status.textContent = `Player ${currentPlayer}'s turn`;
-        }
-    }
-
-    // Render game board
-    function renderBoard() {
-        board.childNodes.forEach((cell, index) => {
-            cell.textContent = gameBoard[index];
+            if (checkWinner(currentPlayer)) {
+                status.textContent = `Player ${currentPlayer} wins!`;
+                gameEnded = true;
+            } else if (isBoardFull()) {
+                status.textContent = "It's a tie!";
+                gameEnded = true;
+            } else {
+                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                status.textContent = `Player ${currentPlayer}'s turn`;
+            }
         });
-    }
+    });
 
-    // Check for a winner
+    resetButton.addEventListener('click', () => {
+        currentPlayer = 'X';
+        gameBoard = ['', '', '', '', '', '', '', '', ''];
+        gameEnded = false;
+        cells.forEach(cell => {
+            cell.textContent = '';
+        });
+        status.textContent = `Player ${currentPlayer}'s turn`;
+    });
+
     function checkWinner(player) {
         const winningCombos = [
             [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
@@ -54,22 +51,9 @@ document.addEventListener('DOMContentLoaded', function() {
         );
     }
 
-    // Check if the board is full
     function isBoardFull() {
         return gameBoard.every(cell => cell !== '');
     }
-
-    // Reset game
-    resetButton.addEventListener('click', () => {
-        currentPlayer = 'X';
-        gameBoard = ['', '', '', '', '', '', '', '', ''];
-        gameEnded = false;
-        status.textContent = `Player ${currentPlayer}'s turn`;
-        renderBoard();
-    });
-
-    // Initial status
-    status.textContent = `Player ${currentPlayer}'s turn`;
 });
 
 
