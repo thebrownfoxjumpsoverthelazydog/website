@@ -12,11 +12,19 @@ body {
     text-align: center;
 }
 
+.result {
+    margin-bottom: 20px;
+}
+
+.result img {
+    max-width: 100%;
+    height: auto;
+}
+
 .board {
     display: grid;
     grid-template-columns: repeat(3, 100px);
     grid-gap: 5px;
-    margin-bottom: 20px;
 }
 
 .cell {
