@@ -34,20 +34,20 @@ document.addEventListener('DOMContentLoaded', function() {
         gameBoard = ['', '', '', '', '', '', '', '', ''];
         gameEnded = false;
         cells.forEach(cell => {
-            cell.textContent = '';
+            cell.textContent = ''; // Clear cell content
         });
         status.textContent = `Player ${currentPlayer}'s turn`;
     });
 
     function checkWinner(player) {
-        const winningCombos = [
-            [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
-            [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns
-            [0, 4, 8], [2, 4, 6] // diagonals
+        const winPatterns = [
+            [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
+            [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
+            [0, 4, 8], [2, 4, 6] // Diagonals
         ];
 
-        return winningCombos.some(combo =>
-            combo.every(index => gameBoard[index] === player)
+        return winPatterns.some(pattern =>
+            pattern.every(index => gameBoard[index] === player)
         );
     }
 
@@ -55,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return gameBoard.every(cell => cell !== '');
     }
 });
-
 
 
 
